@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="mystyle1.css">
+
+    <script>
+
+        function loopToLog() {
+            var txtBox = document.getElementById("txtBox");
+            var number = txtBox.value;
+            for (let index = 1; index <= number; index++) {
+                console.log(index);
+            }
+        }
+
+        function calculate(arithmatic) {
+            var input1 = document.getElementById("numOneTxtBox");
+            var input2 = document.getElementById("numTwoTxtBox");
+            var lbl = document.getElementById("resLbl");
+            var num1 = Number(input1.value);
+            var num2 = Number(input2.value);
+            var res;
+            if (arithmatic == '+')
+                res = num1 + num2;
+            if (arithmatic == '-')
+                res = num1 - num2;
+            if (arithmatic == '*')
+                res = num1 * num2;
+            if (arithmatic == '/')
+                res = num1 / num2;
+
+            lbl.innerText = res;
+        }
+    </script>
+</head>
+
+<body style="background-color: lightgoldenrodyellow;">
+    <a class="brdr1" href="index.html">Home</a>
+    <a class="brdr2" href="contactus.Html">Contact Us</a>
+
+    <h1>Contact Us</h1>
+    <input value="10" id="txtBox" type="number">
+    <input onclick="loopToLog()" type="button" name="btn" value="Click Me" />
+
+    <table>
+        <tr>
+            <td>Number 1:</td>
+            <td>
+                <input id="numOneTxtBox" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>Number 2:</td>
+            <td>
+                <input id="numTwoTxtBox" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <button id="plus" onclick="calculate('+')">+</button>
+                <button id="minus" onclick="calculate('-')">-</button>
+
+                <button id="multiply" onclick="calculate('*')">*</button>
+
+                <button id="devide" onclick="calculate('/')">/</button>
+
+            </td>
+
+        </tr>
+    </table>
+    <h2 id="resLbl"></h2>
+
+</body>
+
+</html>
